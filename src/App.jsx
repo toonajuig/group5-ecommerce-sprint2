@@ -1,12 +1,11 @@
-import { Button } from "@/components/ui/button";
 import DHomeScreen from "./components/screens/desktop/DHomeScreen";
-
+import { BrowserRouter } from "react-router-dom";
+// ...
 function App() {
   return (
-    <>
+    <BrowserRouter>
       <DHomeScreen />
-      <Button>Button</Button>
-    </>
+    </BrowserRouter>
   );
 }
 
