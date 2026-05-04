@@ -1,6 +1,6 @@
 export default function DCartCheckoutScreen() {
   return (
-    <div className="font-sans box-border m-0 p-0 transition-[box-shadow,transform] duration-150 rounded-[2px] shadow-[0_1px_3px_rgba(0,0,0,0.08),0_4px_16px_rgba(0,0,0,0.06)] overflow-hidden w-360 h-225 bg-white">
+    <div className="font-sans box-border m-0 p-0 transition-[box-shadow,transform] duration-150 rounded-xs shadow-[0_1px_3px_rgba(0,0,0,0.08),0_4px_16px_rgba(0,0,0,0.06)] overflow-hidden w-360 h-225 bg-white">
       <div className="font-sans box-border m-0 p-0 scrollbar-none w-360 min-h-225 bg-[#F8F6F2] flex flex-col">
         <div className="font-sans box-border m-0 scrollbar-none h-16 bg-white border-b border-[#DDD9D0] flex items-center px-12 gap-0">
           <div className="font-sans box-border m-0 p-0 scrollbar-none flex items-center gap-2 mr-12">
@@ -197,11 +197,11 @@ export default function DCartCheckoutScreen() {
               </div>
               <div className="font-sans box-border m-0 p-0 scrollbar-none flex gap-2 mb-4">
                 <div className="font-sans box-border m-0 scrollbar-none flex-1 h-10 bg-[#EDEA E3] rounded-lg flex items-center px-3"></div>
-                <div className="box-border m-0 scrollbar-none w-auto h-10 rounded-[12px] flex items-center justify-center font-['DM_Sans'] text-[14px] font-semibold cursor-pointer border-[1.5px] border-solid border-[#5B8C5A] px-4 bg-transparent text-[#5B8C5A]">
+                <div className="box-border m-0 scrollbar-none w-auto h-10 rounded-xl flex items-center justify-center font-['DM_Sans'] text-[14px] font-semibold cursor-pointer border-[1.5px] border-solid border-[#5B8C5A] px-4 bg-transparent text-[#5B8C5A]">
                   ใช้
                 </div>
               </div>
-              <div className="box-border m-0 p-0 scrollbar-none w-full h-12 rounded-[12px] flex items-center justify-center font-['DM_Sans'] text-[14px] font-semibold cursor-pointer border-none bg-[#5B8C5A] text-white">
+              <div className="box-border m-0 p-0 scrollbar-none w-full h-12 rounded-xl flex items-center justify-center font-['DM_Sans'] text-[14px] font-semibold cursor-pointer border-none bg-[#5B8C5A] text-white">
                 ดำเนินการชำระเงิน
               </div>
             </div>
@@ -210,16 +210,16 @@ export default function DCartCheckoutScreen() {
                 รับชำระผ่าน
               </div>
               <div className="font-sans box-border m-0 p-0 scrollbar-none flex gap-2">
-                <div className="font-sans box-border m-0 p-0 scrollbar-none w-11 h-8.5 bg-[#EDEAE3] rounded-[6px] flex items-center justify-center text-[16px]">
+                <div className="font-sans box-border m-0 p-0 scrollbar-none w-11 h-8.5 bg-[#EDEAE3] rounded-md flex items-center justify-center text-[16px]">
                   pay 1
                 </div>
-                <div className="font-sans box-border m-0 p-0 scrollbar-none w-11 h-8.5 bg-[#EDEAE3] rounded-[6px] flex items-center justify-center text-[16px]">
+                <div className="font-sans box-border m-0 p-0 scrollbar-none w-11 h-8.5 bg-[#EDEAE3] rounded-md flex items-center justify-center text-[16px]">
                   pay 2
                 </div>
-                <div className="font-sans box-border m-0 p-0 scrollbar-none w-11 h-8.5 bg-[#EDEAE3] rounded-[6px] flex items-center justify-center text-[16px]">
+                <div className="font-sans box-border m-0 p-0 scrollbar-none w-11 h-8.5 bg-[#EDEAE3] rounded-md flex items-center justify-center text-[16px]">
                   pay 3
                 </div>
-                <div className="font-sans box-border m-0 p-0 scrollbar-none w-11 h-8.5 bg-[#EDEAE3] rounded-[6px] flex items-center justify-center text-[16px]">
+                <div className="font-sans box-border m-0 p-0 scrollbar-none w-11 h-8.5 bg-[#EDEAE3] rounded-md flex items-center justify-center text-[16px]">
                   pay 4
                 </div>
               </div>
