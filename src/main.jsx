@@ -8,10 +8,8 @@ import DHomeScreen from './components/screens/desktop/DHomeScreen'
 import DCatalogScreen from './components/screens/desktop/DCatalogScreen'
 import DProductDetailScreen from './components/screens/desktop/DProductDetailScreen'
 import DTrackingScreen from './components/screens/desktop/DTrackingScreen'
-import DEtc1Screen from './components/screens/desktop/DEtc1Screen'
-import DEtc2Screen from './components/screens/desktop/DEtc2Screen'
-import DEtc3Screen from './components/screens/desktop/DEtc3Screen'
-import DEtc4Screen from './components/screens/desktop/DEtc4Screen'
+import DEtc1Screen from './components/screens/desktop/DEtc1Screen.jsx'
+import DEtc2Screen from './components/screens/desktop/DEtc2Screen.jsx'
 
 const router = createBrowserRouter([
     {
@@ -41,14 +39,6 @@ const router = createBrowserRouter([
             {
                 path: '/etc2',
                 element: <DEtc2Screen />,
-            },
-            {
-                path: '/etc3',
-                element: <DEtc3Screen />,
-            },
-            {
-                path: '/etc4',
-                element: <DEtc4Screen />,
             },
         ],
     },
