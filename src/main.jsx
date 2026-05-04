@@ -7,6 +7,7 @@ import './index.css'
 import DHomeScreen from './components/screens/desktop/DHomeScreen'
 import DCatalogScreen from './components/screens/desktop/DCatalogScreen'
 import DProductDetailScreen from './components/screens/desktop/DProductDetailScreen'
+import DTrackingScreen from './components/screens/desktop/DTrackingScreen'
 
 const router = createBrowserRouter([
     {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
             {
                 path: '/product/:id',
                 element: <DProductDetailScreen />,
+            },
+            {
+                path: '/tracking',
+                element: <DTrackingScreen />,
             },
         ],
     },
