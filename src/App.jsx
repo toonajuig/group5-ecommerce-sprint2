@@ -1,6 +1,12 @@
-import DCartCheckoutScreen from "./components/screens/desktop/DCartCheckoutScreen";
+import DHomeScreen from "./components/screens/desktop/DHomeScreen";
+import { BrowserRouter } from "react-router-dom";
+
 function App() {
-  return <DCartCheckoutScreen />;
+  return (
+    <BrowserRouter>
+      <DHomeScreen />
+    </BrowserRouter>
+  );
 }
 
 export default App;
