@@ -17,13 +17,13 @@ const DHomeScreen = () => {
             title: 'ประโยชน์ของอกไก่ปั่นที่คุณอาจยังไม่รู้',
             desc: 'ทำไมเหล่านักกล้ามและคนรักสุขภาพถึงเลือกอกไก่ปั่น...',
             img: 'https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&q=80&w=500',
-            link: '/etc1',
+            link: '/etc3',
         },
         {
             title: 'กินอย่างไรให้หุ่นดีแบบยั่งยืน',
             desc: 'เทคนิคการเลือกอาหาร Clean Food ให้เข้ากับไลฟ์สไตล์...',
             img: 'https://images.unsplash.com/photo-1466637574441-749b8f19452f?auto=format&fit=crop&q=80&w=500',
-            link: '/etc1',
+            link: '/etc4',
         },
     ]
 
