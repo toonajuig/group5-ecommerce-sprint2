@@ -17,15 +17,16 @@ import DEtc1Screen from './components/screens/desktop/DEtc1Screen'
 import DEtc2Screen from './components/screens/desktop/DEtc2Screen'
 import DEtc3Screen from './components/screens/desktop/DEtc3Screen'
 import DEtc4Screen from './components/screens/desktop/DEtc4Screen'
+import DLoginScreen from './components/screens/desktop/DLoginScreen'
 
 const router = createBrowserRouter([
     {
         path: '/admin',
         element: <AdminLayout />,
         children: [
-            { index: true,          element: <AdminDashboard /> },
-            { path: 'products',     element: <AdminProducts /> },
-            { path: 'orders',       element: <AdminOrders /> },
+            { index: true, element: <AdminDashboard /> },
+            { path: 'products', element: <AdminProducts /> },
+            { path: 'orders', element: <AdminOrders /> },
         ],
     },
     {
@@ -63,6 +64,10 @@ const router = createBrowserRouter([
             {
                 path: '/etc4',
                 element: <DEtc4Screen />,
+            },
+            {
+                path: '/login',
+                element: <DLoginScreen />,
             },
         ],
     },
