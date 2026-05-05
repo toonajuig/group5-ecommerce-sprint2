@@ -1,20 +1,25 @@
 import { useState } from 'react'
 import { NavLink, Link } from 'react-router-dom'
-import { Search, ShoppingBag, Menu, X, User } from 'lucide-react' // เพิ่มไอคอนเมนู
+import { Search, ShoppingBag, Menu, X, User, LogOut } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 
 const NavBar = () => {
-    const [isMenuOpen, setIsMenuOpen] = useState(false) // สถานะเปิด-ปิดเมนูบนมือถือ
+    const [isMenuOpen, setIsMenuOpen] = useState(false)
 
-    // ฟังก์ชันกำหนดสไตล์เมนู
+    // for test only -- delete next phase
+    const [user, setUser] = useState({
+        name: 'สมตูน คูณร้อย',
+        image: null,
+    })
+
     const navLinkClass = ({ isActive }) =>
         isActive
-            ? 'border-[#7aaf69] border-b-2 pb-1 font-semibold text-[#72a25f] md:border-b-2'
+            ? 'border-[#7aaf69] border-b-2 pb-1 font-semibold text-[#72a25f]'
             : 'text-[#8e8a83] transition hover:text-[#4c4a45]'
 
     return (
-        <nav className="sticky top-0 z-50 border-b border-[#ddd6c8] bg-[#fcfbf8]">
+        <nav className="sticky top-0 z-50 border-b border-[#ddd6c8] bg-[#fcfbf8] font-sans">
             <div className="mx-auto flex max-w-281.5 items-center justify-between px-4 md:px-8 py-3">
                 <div className="flex items-center gap-4 md:gap-10">
                     {/* Hamburger Menu (Mobile Only) */}
@@ -27,16 +32,16 @@ const NavBar = () => {
 
                     {/* Logo Section */}
                     <Link to="/" className="flex items-center gap-2 md:gap-3">
-                        <div className="flex h-8 w-8 items-center justify-center rounded-xl border border-[#d6d2c7] bg-white shadow-sm font-sans">
+                        <div className="flex h-8 w-8 items-center justify-center rounded-xl border border-[#d6d2c7] bg-white shadow-sm">
                             <span className="text-sm">🥗</span>
                         </div>
-                        <span className="text-[15px] font-semibold tracking-wide text-[#202020]">
+                        <span className="text-[15px] font-bold tracking-wide text-[#202020]">
                             JuicyHealthy
                         </span>
                     </Link>
 
-                    {/* Desktop Navigation (แสดงเมื่อจอใหญ่ขึ้น) */}
-                    <div className="hidden md:flex items-center gap-7 text-[13px]">
+                    {/* Desktop Navigation */}
+                    <div className="hidden md:flex items-center gap-7 text-[13px] font-bold">
                         <NavLink to="/" className={navLinkClass}>
                             หน้าหลัก
                         </NavLink>
@@ -52,14 +57,13 @@ const NavBar = () => {
                     </div>
                 </div>
 
-                {/* Right Section (Search & Cart) */}
-                <div className="flex items-center gap-2 md:gap-3">
-                    {/* Search Bar - ซ่อนบนมือถือเพื่อประหยัดพื้นที่ หรือจะย่อขนาดลง */}
+                {/* Right Section */}
+                <div className="flex items-center gap-2 md:gap-4">
                     <div className="relative hidden sm:block">
-                        <Search className="pointer-events-none absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 text-[#9c978f]" />
+                        <Search className="absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 text-[#9c978f]" />
                         <Input
                             placeholder="ค้นหาเมนู..."
-                            className="h-10 w-30 lg:w-42 rounded-xl border-[#e5dfd3] bg-[#ece8df] pr-3 pl-9 text-[12px] text-[#6d675f] shadow-none focus-visible:ring-0"
+                            className="h-10 w-30 lg:w-42 rounded-xl border-[#e5dfd3] bg-[#ece8df] pr-3 pl-9 text-[12px] shadow-none focus-visible:ring-0"
                         />
                     </div>
 
@@ -70,23 +74,61 @@ const NavBar = () => {
                             className="relative h-10 w-10 rounded-xl border-[#e5dfd3] bg-[#f5f2ea] text-[#5b5750] shadow-none"
                         >
                             <ShoppingBag className="h-4 w-4" />
-                            <span className="absolute -top-1 -right-1 flex h-4 min-w-4 items-center justify-center rounded-full bg-[#de6b6b] px-1 text-[9px] font-semibold text-white">
+                            <span className="absolute -top-1 -right-1 flex h-4 min-w-4 items-center justify-center rounded-full bg-[#de6b6b] px-1 text-[9px] font-bold text-white">
                                 2
                             </span>
                         </Button>
                     </Link>
 
-                    <Link to="/login">
-                        <div className="h-10 w-10 rounded-full bg-[#e9e3d9] flex items-center justify-center text-[#5b5750] hover:bg-[#ddd8ce] transition-colors">
-                            <User className="h-4 w-4" />
+                    {/* --- ส่วนที่ปรับปรุง: Login / Profile Logic ---*/}
+                    {user ? (
+                        <div className="flex items-center gap-3 group relative">
+                            <div className="hidden md:block text-right">
+                                <p className="text-[11px] font-black text-[#202020] leading-none">
+                                    {user.name}
+                                </p>
+                                <p className="text-[9px] text-[#72a25f] font-bold uppercase tracking-tighter">
+                                    Member
+                                </p>
+                            </div>
+
+                            <div className="h-10 w-10 rounded-full bg-[#5c8254] border-2 border-white shadow-md flex items-center justify-center overflow-hidden cursor-pointer transition-transform group-hover:scale-105">
+                                {user.image ? (
+                                    <img
+                                        src={user.image}
+                                        alt="User"
+                                        className="h-full w-full object-cover"
+                                    />
+                                ) : (
+                                    <span className="text-white font-black text-sm">
+                                        {user.name.charAt(0)}
+                                    </span>
+                                )}
+                            </div>
+
+                            {/* Dropdown Menu จำลอง (โชว์เมื่อ Hover Profile) */}
+                            <div className="absolute top-full right-0 mt-2 w-32 bg-white border border-[#e5dfd3] rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50 overflow-hidden">
+                                <button
+                                    onClick={() => setUser(null)}
+                                    className="w-full flex items-center gap-2 px-4 py-3 text-[11px] font-bold text-red-500 hover:bg-red-50 transition-colors"
+                                >
+                                    <LogOut size={14} /> ออกจากระบบ
+                                </button>
+                            </div>
                         </div>
-                    </Link>
+                    ) : (
+                        <Link to="/login">
+                            <div className="h-10 w-10 rounded-full bg-[#e9e3d9] hover:bg-[#ddd6c8] transition-colors flex items-center justify-center text-[#8e8a83] cursor-pointer shadow-sm">
+                                <User size={18} />
+                            </div>
+                        </Link>
+                    )}
                 </div>
             </div>
 
-            {/* Mobile Navigation Drawer (แสดงเมื่อกด Hamburger) */}
+            {/* Mobile Navigation Drawer */}
             {isMenuOpen && (
-                <div className="md:hidden bg-white border-t border-[#ddd6c8] px-6 py-4 flex flex-col gap-4 text-[14px]">
+                <div className="md:hidden bg-white border-t border-[#ddd6c8] px-6 py-4 flex flex-col gap-4 text-[14px] font-bold animate-in fade-in slide-in-from-top-2">
                     <NavLink
                         to="/"
                         className={navLinkClass}
@@ -115,15 +157,6 @@ const NavBar = () => {
                     >
                         เกี่ยวกับเรา
                     </NavLink>
-
-                    {/* เพิ่มช่องค้นหาในเมนูสำหรับมือถือ */}
-                    <div className="relative sm:hidden mt-2">
-                        <Search className="pointer-events-none absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 text-[#9c978f]" />
-                        <Input
-                            placeholder="ค้นหาเมนู..."
-                            className="h-10 w-full rounded-xl border-[#e5dfd3] bg-[#ece8df] pr-3 pl-9 text-[12px] shadow-none focus-visible:ring-0"
-                        />
-                    </div>
                 </div>
             )}
         </nav>
