@@ -17,6 +17,9 @@ import DEtc1Screen from './components/screens/desktop/DEtc1Screen'
 import DEtc2Screen from './components/screens/desktop/DEtc2Screen'
 import DEtc3Screen from './components/screens/desktop/DEtc3Screen'
 import DEtc4Screen from './components/screens/desktop/DEtc4Screen'
+import DLoginScreen from './components/screens/desktop/DLoginScreen'
+import DCartCheckoutScreen from './components/screens/desktop/DCartCheckoutScreen'
+import DPaymentScreen from './components/screens/desktop/DPaymentScreen'
 
 const router = createBrowserRouter([
     {
@@ -63,6 +66,18 @@ const router = createBrowserRouter([
             {
                 path: '/etc4',
                 element: <DEtc4Screen />,
+            },
+            {
+                path: '/login',
+                element: <DLoginScreen />,
+            },
+            {
+                path: '/cart',
+                element: <DCartCheckoutScreen />,
+            },
+            {
+                path: '/payment',
+                element: <DPaymentScreen />,
             },
         ],
     },

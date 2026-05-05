@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { NavLink, Link } from 'react-router-dom'
-import { Search, ShoppingBag, Menu, X } from 'lucide-react' // เพิ่มไอคอนเมนู
+import { Search, ShoppingBag, Menu, X, User } from 'lucide-react' // เพิ่มไอคอนเมนู
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 
@@ -63,7 +63,7 @@ const NavBar = () => {
                         />
                     </div>
 
-                    <Link to="/tracking">
+                    <Link to="/cart">
                         <Button
                             variant="outline"
                             size="icon"
@@ -76,7 +76,11 @@ const NavBar = () => {
                         </Button>
                     </Link>
 
-                    <div className="h-10 w-10 rounded-full bg-[#e9e3d9] cursor-pointer" />
+                    <Link to="/login">
+                        <div className="h-10 w-10 rounded-full bg-[#e9e3d9] flex items-center justify-center text-[#5b5750] hover:bg-[#ddd8ce] transition-colors">
+                            <User className="h-4 w-4" />
+                        </div>
+                    </Link>
                 </div>
             </div>
 

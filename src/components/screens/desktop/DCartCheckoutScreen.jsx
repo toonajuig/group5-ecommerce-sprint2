@@ -1,5 +1,3 @@
-import NavBar from '@/components/layout/NavBar'
-
 const cartItems = [
   { id: 1, name: 'อกไก่ปั่น ข้าวกล้อง', note: 'ไม่เผ็ด', qty: 2, price: 178 },
   { id: 2, name: 'Green Protein Smoothie', note: 'ไม่มีน้ำตาล', qty: 1, price: 79 },
@@ -17,8 +15,6 @@ const paymentIcons = ['💳', '🏦', '🍊', '🔴']
 export default function DCartCheckoutScreen() {
   return (
     <div className="min-h-screen bg-[#F8F6F2] font-['DM_Sans']">
-      <NavBar />
-
       <div className="max-w-281.5 mx-auto px-8 py-8 flex gap-7 items-start">
         {/* ───── Left column ───── */}
         <div className="flex-1 min-w-0 flex flex-col gap-5">
