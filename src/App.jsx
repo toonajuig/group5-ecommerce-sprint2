@@ -1,13 +1,7 @@
-import { Button } from "@/components/ui/button";
-import DHomeScreen from "./components/screens/desktop/DHomeScreen";
+import DPaymentScreen from "./components/screens/desktop/DPaymentScreen";
 
 function App() {
-  return (
-    <>
-      <DHomeScreen />
-      <Button>Button</Button>
-    </>
-  );
+  return <DPaymentScreen />;
 }
 
 export default App;
