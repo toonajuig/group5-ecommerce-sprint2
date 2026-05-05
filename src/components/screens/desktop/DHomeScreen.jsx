@@ -30,7 +30,17 @@ const DHomeScreen = () => {
     return (
         <div className="min-h-screen bg-[#fcfcf9] pb-20">
             {/* 1. Hero Visual Section */}
-            <section className="bg-[#4b6343] text-white px-8 py-20 md:py-32 relative overflow-hidden">
+            <section className="relative text-white px-8 py-20 md:py-32 overflow-hidden">
+                <div className="absolute inset-0 z-0">
+                    <img
+                        src="https://images.unsplash.com/photo-1556386734-4227a180d19e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fGhlYWx0aHklMjBmb29kfGVufDB8fDB8fHww"
+                        className="w-full h-full object-cover"
+                        alt="Hero Background"
+                    />
+
+                    <div className="absolute inset-0 bg-slate-900/60"></div>
+                </div>
+
                 <div className="max-w-281.5 mx-auto text-center z-10 relative">
                     <span className="bg-white/10 backdrop-blur-md border border-white/20 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-6 inline-block">
                         Welcome to Juicy Healthy
@@ -53,11 +63,6 @@ const DHomeScreen = () => {
                             สำรวจเมนูของเรา
                         </Button>
                     </div>
-                </div>
-                {/* Visual Decorations */}
-                <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
-                    <div className="absolute top-10 left-10 w-64 h-64 border-2 border-white rounded-full"></div>
-                    <div className="absolute bottom-20 right-20 w-96 h-96 bg-white rounded-full blur-3xl"></div>
                 </div>
             </section>
 
