@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom'
 
-import DTopNav from './components/screens/desktop/DTopNav'
+import NavBar from './components/layout/NavBar'
 import DFooter from './components/screens/desktop/DFooter'
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
             <div className="mx-auto flex max-w-281.5 items-center justify-between px-8 py-3">
                 <div>
                     {/* Header จะคงที่อยู่ในทุกหน้า */}
-                    <DTopNav />
+                    <NavBar />
 
                     {/* Outlet จะเปลี่ยนไปตาม Path ที่เราเลือกใน main.jsx */}
                     <main className="max-w-360 mx-auto">
