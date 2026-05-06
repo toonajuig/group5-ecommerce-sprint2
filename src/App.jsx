@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom'
 
 import NavBar from './components/layout/NavBar'
-import DFooter from './components/screens/desktop/DFooter'
+import DFooter from './components/layout/DFooter'
 
 function App() {
     return (
