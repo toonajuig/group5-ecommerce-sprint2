@@ -1,7 +1,6 @@
-import { createContext, useContext, useState } from 'react'
+import { useState } from 'react'
 import { cartItems as initialCart, SHIPPING_FEE } from '@/data/cart'
-
-const CartContext = createContext(null)
+import { CartContext } from './useCart'
 
 export function CartProvider({ children }) {
   const [items, setItems] = useState(initialCart)
@@ -42,6 +41,3 @@ export function CartProvider({ children }) {
   )
 }
 
-export function useCart() {
-  return useContext(CartContext)
-}

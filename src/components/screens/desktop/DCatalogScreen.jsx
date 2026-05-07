@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import { categories, products } from '@/data/products'
-import { useCart } from '@/context/CartContext'
+import { useCart } from '@/context/useCart'
 
 const DCatalogScreen = () => {
     const navigate = useNavigate()

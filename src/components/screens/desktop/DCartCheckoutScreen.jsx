@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { useCart } from '@/context/CartContext'
+import { useCart } from '@/context/useCart'
 import { SHIPPING_FEE } from '@/data/cart'
 import { userAddresses } from '@/data/user'
 import { acceptedPayments } from '@/data/paymentMethods'

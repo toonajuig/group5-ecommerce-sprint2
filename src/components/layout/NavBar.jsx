@@ -3,7 +3,7 @@ import { NavLink, Link, useNavigate } from 'react-router-dom'
 import { Search, ShoppingBag, Menu, X, User, LogOut } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
-import { useCart } from '@/context/CartContext'
+import { useCart } from '@/context/useCart'
 
 const NavBar = () => {
     const navigate = useNavigate()
