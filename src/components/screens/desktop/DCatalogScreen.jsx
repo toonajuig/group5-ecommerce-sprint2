@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { categories, products } from '../../../data/products'
+import { categories, products } from '@/data/products'
 
 const DCatalogScreen = () => {
     const navigate = useNavigate()

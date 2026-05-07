@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 
-import { products } from '../../../data/products'
+import { products } from '@/data/products'
 
 const DProductDetailScreen = () => {
     const { id } = useParams() // รับค่า ID จาก URL เช่น /product/18
