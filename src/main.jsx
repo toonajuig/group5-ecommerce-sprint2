@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import App from './App.jsx'
 import './index.css'
+import { CartProvider } from './context/CartContext'
 
 import AdminLayout from './components/screens/desktop/admin/AdminLayout'
 import AdminDashboard from './components/screens/desktop/admin/AdminDashboard'
@@ -92,6 +93,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
-        <RouterProvider router={router} />
+        <CartProvider>
+            <RouterProvider router={router} />
+        </CartProvider>
     </React.StrictMode>,
 )

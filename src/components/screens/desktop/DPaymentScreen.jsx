@@ -1,14 +1,12 @@
 import { useState } from "react";
-import { cartItems, SHIPPING_FEE } from "@/data/cart";
+import { useCart } from "@/context/CartContext";
 
 function DPaymentScreen() {
+  const { subtotal, total } = useCart();
   const [selectedMethod, setSelectedMethod] = useState("card");
   const [formData, setFormData] = useState({ cardNumber: "", expiry: "", cvv: "", name: "" });
   const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
-
-  const subtotal = cartItems.reduce((sum, item) => sum + item.price * item.qty, 0);
-  const total = subtotal + SHIPPING_FEE;
 
   const methods = [
     { id: "card", label: "บัตรเครดิต/เดบิต" },

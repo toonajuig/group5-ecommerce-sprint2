@@ -1,5 +1,7 @@
 import { useState } from 'react'
-import { cartItems as initialCart, SHIPPING_FEE } from '@/data/cart'
+import { useNavigate } from 'react-router-dom'
+import { useCart } from '@/context/CartContext'
+import { SHIPPING_FEE } from '@/data/cart'
 import { userAddresses } from '@/data/user'
 import { acceptedPayments } from '@/data/paymentMethods'
 
@@ -11,27 +13,9 @@ const timeSlots = [
 ]
 
 export default function DCartCheckoutScreen() {
-  const [items, setItems] = useState(initialCart)
+  const navigate = useNavigate()
+  const { items, subtotal, total, incrementQty, decrementQty, removeItem } = useCart()
   const [selectedSlot, setSelectedSlot] = useState(0)
-
-  const subtotal = items.reduce((sum, item) => sum + item.price * item.qty, 0)
-  const total = subtotal + SHIPPING_FEE
-
-  function incrementQty(id) {
-    setItems((prev) => prev.map((item) => item.id === id ? { ...item, qty: item.qty + 1 } : item))
-  }
-
-  function decrementQty(id) {
-    setItems((prev) =>
-      prev
-        .map((item) => item.id === id ? { ...item, qty: item.qty - 1 } : item)
-        .filter((item) => item.qty > 0)
-    )
-  }
-
-  function removeItem(id) {
-    setItems((prev) => prev.filter((item) => item.id !== id))
-  }
 
   return (
     <div className="min-h-screen bg-[#F8F6F2] font-['DM_Sans']">
@@ -174,7 +158,10 @@ export default function DCartCheckoutScreen() {
               </button>
             </div>
 
-            <button className="w-full h-12 rounded-xl bg-[#5B8C5A] text-white text-[14px] font-semibold hover:bg-[#4a7249] transition-colors">
+            <button
+              onClick={() => navigate('/payment')}
+              className="w-full h-12 rounded-xl bg-[#5B8C5A] text-white text-[14px] font-semibold hover:bg-[#4a7249] transition-colors"
+            >
               ดำเนินการชำระเงิน →
             </button>
           </div>
